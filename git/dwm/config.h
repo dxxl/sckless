@@ -2,12 +2,12 @@
 
 * appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const unsigned int gappx     = 17;        /* gaps between windows */
+static const unsigned int gappx     = 20;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 12;       /* vertical padding of bar */
-static const int sidepad            = 20;       /* horizontal padding of bar */
+static const int vertpad            = 10;       /* vertical padding of bar */
+static const int sidepad            = 18;       /* horizontal padding of bar */
 static const int user_bh            = 32;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "Iosevka:size=11" };
 static const char dmenufont[]       = "Iosevka:size=11";
@@ -23,23 +23,38 @@ static const char dmenufont[]       = "Iosevka:size=11";
 //static const char col_magenta[]     = "#B48EAD";
 
 /* colors [gruvbox]*/
-static const char col_bg[]          = "#282828";
-static const char col_fg[]          = "#FBF1C7";
-static const char col_red[]         = "#FB4934";
-static const char col_darkred[]     = "#CC241D";
-static const char col_orange[]      = "#FE8019";
-static const char col_yellow[]      = "#FABD2F";
-static const char col_gold[]        = "#D79921";
-static const char col_blue[]        = "#458588";
-static const char col_cyan[]        = "#83A598";
-static const char col_violet[]      = "#D3869B";
-static const char col_magenta[]     = "#B16286";
+//static const char col_bg[]          = "#282828";
+//static const char col_fg[]          = "#FBF1C7";
+//static const char col_red[]         = "#FB4934";
+//static const char col_darkred[]     = "#CC241D";
+//static const char col_orange[]      = "#FE8019";
+//static const char col_yellow[]      = "#FABD2F";
+//static const char col_gold[]        = "#D79921";
+//static const char col_blue[]        = "#458588";
+//static const char col_cyan[]        = "#83A598";
+//static const char col_violet[]      = "#D3869B";
+//static const char col_magenta[]     = "#B16286";
+
+//* colors [tokyo night storm] */
+static const char col_bg[]        = "#1A1B26";
+static const char col_fg[]        = "#A9B1D6";
+static const char col_red[]       = "#F7768E";
+static const char col_yellow[]    = "#E0AF68";
+static const char col_orange[]    = "#ff9e64";
+static const char col_green[]     = "#9ece6a";
+static const char col_tgreen[]    = "#73daca";
+static const char col_cyan[]      = "#b4f9f8";
+static const char col_dgreen[]    = "#98C379";
+static const char col_lblue[]     = "#61AFEF";
+static const char col_blue[]      = "#7AA3F7";
+static const char col_magenta[]   = "#9A7ECC";
+static const char col_white[]     = "#ACB0D0";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_yellow, col_bg, col_bg },
-	[SchemeSel]  = { col_orange, col_bg,  col_yellow  },
-	[SchemeTitle]  = { col_red, col_darkred,  col_yellow  },
+	[SchemeNorm] = { col_white, col_bg, col_bg },
+	[SchemeSel]  = { col_magenta, col_bg,  col_magenta  },
+	[SchemeTitle]  = { col_red, col_bg,  col_yellow  },
 };
 
 /* tagging */
@@ -57,7 +72,6 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
       { "chromium", NULL,       NULL,       1 << 8,       0,           -1 },
       { "libreoffice",  NULL,   NULL,       1 << 8,       1,           -1 },
-      { ".scripts/screenshot-scr.sh", NULL,   NULL,    1 << 8,     1,     -1 },
 };
 
 /* layout(s) */
@@ -96,7 +110,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_yellow, "-sb", col_bg, "-sf", col_red, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_white, "-sb", col_bg, "-sf", col_red, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 
 #include "mpdcontrol.c"
